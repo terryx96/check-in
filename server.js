@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
+const service = require('./service/service')
 
 app.get("/", (req, res) => {
-    res.send("Hello Cody")
+    qr = service.generateQR()
+    res.send(qr)
 })
 
 app.listen(8000, () => {
